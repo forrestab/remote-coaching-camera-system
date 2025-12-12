@@ -1,0 +1,64 @@
+mqtt:
+  enabled: false
+
+go2rtc:
+  streams:
+    training_cam01:
+      - rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+    training_cam02:
+      - rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+    training_cam03:
+      - rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+  webrtc:
+    candidates:
+      - training.browniethearcher.com:8555
+      - stun:8555
+
+cameras:
+  training_cam01:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+          roles:
+            - detect
+            - record
+    live:
+      streams:
+        main: training_cam01
+
+  training_cam02:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+          roles:
+            - detect
+            - record
+    live:
+      streams:
+        main: training_cam02
+
+  training_cam03:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:<password>@<ip>:554/h264Preview_01_main
+          roles:
+            - detect
+            - record
+    live:
+      streams:
+        main: training_cam03
+
+detect:
+  enabled: false
+
+record:
+  enabled: true
+  retain:
+    days: 7
+    mode: all
+  alerts:
+    retain: {}
+  detections:
+    retain: {}
+
+version: 0.16-0
