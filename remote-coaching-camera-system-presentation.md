@@ -64,8 +64,7 @@ Claude and I went back and forth on on the hardware and software stack, but ulti
 
 # Why tripods?
 
-* Mobile
-* Better control over placement and positioning
+* Mobile and better control over placement and positioning
 * Perfect for trials
 
 ---
@@ -75,6 +74,7 @@ Claude and I went back and forth on on the hardware and software stack, but ulti
 * Best looking open source camera streaming/recording tool
 * Does what I need in the first phase
 * Uses [go2rtc](https://github.com/AlexxIT/go2rtc)
+* [Example config](https://github.com/forrestab/remote-coaching-camera-system/blob/main/frigate-config.yml)
 
 ---
 
